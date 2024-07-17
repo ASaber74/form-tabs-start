@@ -1,0 +1,47 @@
+<div [formGroup]="parentForm">
+  <div class="mb-3 w-50 my-4">
+    <label for="available-languages" class="form-label">
+      Available languages<span class="text-danger fs-5">*</span>
+    </label>
+    <select
+      class="form-select form-select-md"
+      name="available-languages"
+      id="available-languages"
+      formControlName="availableLanguages"
+    >
+      <option *ngFor="let language of languages" [value]="language">
+        {{ language }}
+      </option>
+    </select>
+  </div>
+
+  <div class="mb-3 w-25">
+    <label for="primary-languages" class="form-label">
+      Primary languages<span class="text-danger fs-5">*</span>
+    </label>
+    <select
+      class="form-select form-select-md"
+      name="primary-languages"
+      id="primary-languages"
+      formControlName="primaryLanguage"
+    >
+      <option value="English">English</option>
+      <option value="Arabic">Arabic</option>
+    </select>
+  </div>
+
+  <div class="mb-3 w-25">
+    <label for="secondary-languages" class="form-label">
+      Secondary languages<span class="text-danger fs-5">*</span>
+    </label>
+    <select
+      class="form-select form-select-md"
+      name="secondary-languages"
+      id="secondary-languages"
+      formControlName="secondaryLanguage"
+    >
+      <option value="English">English</option>
+      <option value="Arabic">Arabic</option>
+    </select>
+  </div>
+</div>
