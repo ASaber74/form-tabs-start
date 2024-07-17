@@ -13,11 +13,12 @@ export class MainFormComponent {
 
   constructor(private fb: FormBuilder) {
     this.mainForm = this.fb.group({
-      languageGroup: this._languageFormGroup(),
+      languageGroup: this.createLanguageFormGroup(),
+      // Add other form groups for authentication and communication here
     });
   }
 
-  private _languageFormGroup(): FormGroup {
+  private createLanguageFormGroup(): FormGroup {
     return this.fb.group({
       availableLanguages: [this.languages[0]],
       primaryLanguage: 'English',
@@ -27,9 +28,5 @@ export class MainFormComponent {
 
   handleSave(mainForm: FormGroup) {
     console.log(mainForm.value);
-  }
-
-  get languageGroup(): FormGroup {
-    return this.mainForm.get('languageGroup') as FormGroup;
   }
 }

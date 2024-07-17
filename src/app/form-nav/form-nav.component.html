@@ -45,7 +45,9 @@
 
 <div class="tab-content">
   <div class="tab-pane fade show active" id="language" role="tabpanel" aria-labelledby="language-tab">
-    <app-language-form [parentForm]="parentForm"></app-language-form>
+    <div formGroupName="languageGroup">
+      <app-language-form></app-language-form>
+    </div>
   </div>
   <div class="tab-pane fade" id="authentication" role="tabpanel" aria-labelledby="authentication-tab">
     Authentication content

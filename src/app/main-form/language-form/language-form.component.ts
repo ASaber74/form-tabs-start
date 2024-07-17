@@ -1,10 +1,5 @@
-import { Component, forwardRef, Input } from '@angular/core';
-import {
-  ControlValueAccessor,
-  FormBuilder,
-  FormGroup,
-  NG_VALUE_ACCESSOR,
-} from '@angular/forms';
+import { Component, forwardRef } from '@angular/core';
+import { ControlValueAccessor, FormBuilder, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { LANGUAGES } from 'src/languages';
 
 @Component({
@@ -20,28 +15,36 @@ import { LANGUAGES } from 'src/languages';
   ],
 })
 export class LanguageFormComponent implements ControlValueAccessor {
-  @Input() parentForm!: FormGroup;
+  form: FormGroup;
   languages: string[] = LANGUAGES;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      availableLanguages: [this.languages[0]],
+      primaryLanguage: 'English',
+      secondaryLanguage: 'Arabic',
+    });
+  }
 
   writeValue(value: any): void {
     if (value) {
-      this.parentForm.setValue(value);
+      this.form.setValue(value);
     }
   }
 
   registerOnChange(fn: any): void {
-    this.parentForm.valueChanges.subscribe(fn);
+    this.form.valueChanges.subscribe(fn);
   }
+
   registerOnTouched(fn: any): void {
     // Handle the touched state
   }
+
   setDisabledState?(isDisabled: boolean): void {
     if (isDisabled) {
-      this.parentForm.disable();
+      this.form.disable();
     } else {
-      this.parentForm.enable();
+      this.form.enable();
     }
   }
 }
