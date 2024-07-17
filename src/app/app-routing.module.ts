@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainFormComponent } from './main-form/main-form.component';
+import { SettingsFormComponent } from './settings-form/settings-form.component';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'form',
-    component: MainFormComponent,
+    component: SettingsFormComponent,
   },
 ];
 

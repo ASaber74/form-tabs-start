@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainFormComponent } from './main-form.component';
+import { AuthNavComponent } from './auth-nav.component';
 
-describe('mainFormComponent', () => {
-  let component: MainFormComponent;
-  let fixture: ComponentFixture<MainFormComponent>;
+describe('AuthNavComponent', () => {
+  let component: AuthNavComponent;
+  let fixture: ComponentFixture<AuthNavComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MainFormComponent],
+      declarations: [AuthNavComponent]
     });
-    fixture = TestBed.createComponent(MainFormComponent);
+    fixture = TestBed.createComponent(AuthNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

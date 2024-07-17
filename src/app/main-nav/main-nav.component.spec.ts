@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MainNavComponent } from './main-nav.component';
 
-import { FormNavComponent } from './form-nav.component';
 
 describe('FormNavComponent', () => {
-  let component: FormNavComponent;
-  let fixture: ComponentFixture<FormNavComponent>;
+  let component: MainNavComponent;
+  let fixture: ComponentFixture<MainNavComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FormNavComponent]
+      declarations: [MainNavComponent]
     });
-    fixture = TestBed.createComponent(FormNavComponent);
+    fixture = TestBed.createComponent(MainNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,49 @@
+<ul class="nav nav-tabs" id="authTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button
+      class="nav-link active"
+      id="basic-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#basic"
+      type="button"
+      role="tab"
+      aria-controls="basic"
+      aria-selected="true"
+    >
+      Basic
+    </button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button
+      class="nav-link"
+      id="ldap-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#ldap"
+      type="button"
+      role="tab"
+      aria-controls="ldap"
+      aria-selected="false"
+    >
+      Ldap
+    </button>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div
+    class="tab-pane active"
+    id="basic"
+    role="tabpanel"
+    aria-labelledby="basic-tab"
+  >
+    <div [formGroup]="authGroup">
+      <div>
+        <app-basic-form formControlGroup="basicAuthGroup" />
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane" id="ldap" role="tabpanel" aria-labelledby="ldap-tab">
+    <app-ldap-form formControlGroup="ldapAuthGroup"/>
+  </div>
+</div>

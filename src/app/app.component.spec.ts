@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have as title 'reactive-form-task'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('reactive-form-task');
+    expect(app['title']).toEqual('reactive-form-task');
   });
 
   it('should render title', () => {
