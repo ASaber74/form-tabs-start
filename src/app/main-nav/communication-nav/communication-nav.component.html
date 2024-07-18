@@ -29,7 +29,6 @@
   </li>
 </ul>
 
-<!-- Tab panes -->
 <div class="tab-content">
   <div
     class="tab-pane active"
@@ -37,11 +36,13 @@
     role="tabpanel"
     aria-labelledby="mail-tab"
   >
-    <div formControlGroup="communicationSettings">
-      <app-mail-form formControlGroup="mailCommunication" />
+    <div [formGroup]="communicationSettings">
+      <app-mail-form formGroupName="mailCommunication" />
     </div>
   </div>
   <div class="tab-pane" id="sms" role="tabpanel" aria-labelledby="sms-tab">
-    <app-sms-form />
+    <div [formGroup]="communicationSettings">
+      <app-sms-form formGroupName="smsCommunication" />
+    </div>
   </div>
 </div>

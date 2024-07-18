@@ -1,4 +1,4 @@
-import { Component, forwardRef, OnDestroy } from '@angular/core';
+import { Component, forwardRef, Input, OnDestroy } from '@angular/core';
 import {
   ControlValueAccessor,
   FormBuilder,
@@ -21,10 +21,13 @@ import { LANGUAGES } from 'src/languages';
   ],
 })
 export class LanguageFormComponent implements ControlValueAccessor, OnDestroy {
+  @Input() formGroupName!: string;
   languageForm: FormGroup;
   languages: string[] = LANGUAGES;
   onChangeSub!: Subscription;
   onTouched = () => {};
+  onChange = (_: any) => {};
+
   constructor(private fb: FormBuilder) {
     this.languageForm = this.fb.group({
       availableLanguages: [this.languages[0]],
@@ -39,13 +42,16 @@ export class LanguageFormComponent implements ControlValueAccessor, OnDestroy {
     }
   }
 
-  registerOnChange(onChange: any): void {
-    this.onChangeSub = this.languageForm.valueChanges.subscribe(onChange);
+  registerOnChange(onChange: any) {
+    this.onChangeSub = this.languageForm.valueChanges.subscribe((value) =>
+      onChange(value)
+    );
   }
 
   ngOnDestroy(): void {
     this.onChangeSub.unsubscribe();
   }
+
   registerOnTouched(onTouched: any): void {
     this.onTouched = onTouched;
   }

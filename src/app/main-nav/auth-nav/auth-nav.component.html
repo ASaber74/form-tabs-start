@@ -29,7 +29,6 @@
   </li>
 </ul>
 
-<!-- Tab panes -->
 <div class="tab-content">
   <div
     class="tab-pane active"
@@ -38,12 +37,10 @@
     aria-labelledby="basic-tab"
   >
     <div [formGroup]="authGroup">
-      <div>
-        <app-basic-form formControlGroup="basicAuthGroup" />
-      </div>
+      <app-basic-form formControlGroup="basicAuthGroup" />
     </div>
   </div>
   <div class="tab-pane" id="ldap" role="tabpanel" aria-labelledby="ldap-tab">
-    <app-ldap-form formControlGroup="ldapAuthGroup"/>
+    <app-ldap-form formControlGroup="ldapAuthGroup" />
   </div>
 </div>

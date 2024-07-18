@@ -2,6 +2,7 @@ import { Component, forwardRef, OnDestroy } from '@angular/core';
 import {
   ControlValueAccessor,
   FormBuilder,
+  FormControl,
   FormGroup,
   NG_VALUE_ACCESSOR,
   Validators,
@@ -46,6 +47,7 @@ export class BasicFormComponent implements ControlValueAccessor, OnDestroy {
       preventRepeatedSequenceWithLengthOf: [3, Validators.required],
     });
   }
+
   writeValue(value: any): void {
     if (value) {
       this.basicAuthGroup.setValue(value);

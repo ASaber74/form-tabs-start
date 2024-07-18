@@ -22,6 +22,7 @@ export class SettingsFormComponent {
       }),
       communicationSettings: this.fb.group({
         mailCommunication: this._mailCommunication(),
+        smsCommunication: this._smsCommunication(),
       }),
     });
 
@@ -88,6 +89,19 @@ export class SettingsFormComponent {
         Validators.required,
       ],
       password: [{ value: 'P@ssw0rd', disabled: true }, Validators.required],
+    });
+  }
+
+  private _smsCommunication(): FormGroup {
+    return this.fb.group({
+      smsType: ['Standard', Validators.required],
+      npi: [123, Validators.required],
+      ton: ['SMSTON', Validators.required],
+      sourceAddress: ['SourceAddress', Validators.required],
+      hostIp: ['192.168.3.114', Validators.required],
+      smsPort: ['900', Validators.required],
+      smsUsername: ['Ahmed', Validators.required],
+      smsPassword: ['P@ssw0rd', Validators.required],
     });
   }
 

@@ -51,7 +51,7 @@
     aria-labelledby="language-tab"
   >
     <div [formGroup]="parentForm">
-      <app-language-form formControlGroup="languageGroup"></app-language-form>
+      <app-language-form formGroupName="languageGroup"></app-language-form>
     </div>
   </div>
   <div
@@ -60,8 +60,7 @@
     role="tabpanel"
     aria-labelledby="authentication-tab"
   >
-      <app-auth-nav [authGroup]="authGroup"/>
-
+    <app-auth-nav [authGroup]="authGroup"></app-auth-nav>
   </div>
   <div
     class="tab-pane fade"
@@ -69,6 +68,8 @@
     role="tabpanel"
     aria-labelledby="communication-tab"
   >
-  <app-communication-nav [communicationSettings]="communicationSettings"/>
-</div>
+    <app-communication-nav
+      [communicationSettings]="communicationSettings"
+    ></app-communication-nav>
+  </div>
 </div>
